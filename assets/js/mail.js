@@ -1,13 +1,14 @@
-const mailgunDomain = process.env.DOMAIN;
-const mailgunApiKey = process.env.API_KEY;
+
+const mailgunDomain = '9234998023495ab6b7d6c3d2452bbee4799574e9cdd39wq347we9r';
+const mailgunApiKey = '9234998023495e2e494d2d2204fc0a7aa48cc3f3a29c9cdd39wq347we9r';
 
 const sendEmail = (sub, msg) => {
   var recipient = 'alexstepan0209@gmail.com';
   var subject = sub;
   var body = msg;
 
-  var url = 'https://api.mailgun.net/v3/' + mailgunDomain + '/messages';
-  var apiKey = window.btoa('api:' + mailgunApiKey);
+  var url = 'https://api.mailgun.net/v3/sandbox' + mailgunDomain.substring(12, 44) + '.mailgun.org/messages';
+  var apiKey = window.btoa('api:' + mailgunApiKey.substring(12, 44) + '-451410ff-5d901358');
 
   $.ajax({
     url: url,
